@@ -142,6 +142,7 @@ function scoreboard(getInningScoreCb, inningCb, quantity) {
 
         score.Home += inningScoreHome;
         score.Away += inningScoreAway;
+        
         console.log(`Inning #${i + 1}: ${inningScoreAway} - ${inningScoreHome}`);
     }
 

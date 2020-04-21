@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+It means you I have indirect access to variables in the environment, even after the function which created the environment finished execution.
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,21 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+Anonymous function.
+
+It was created while personalDice was being executed.
+And the reference to the anonymous function was returned to the outer scope.
+Now when the anonymous function is invoked, it will have access to variables in the environment of personalDice.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+
+It will always display a random number. The names will be different.
+
+
+c. What is the lexical scope of `newRoll`?
+
+the anonymous function
 
 ### Task 3 - Stretch Goals
 
