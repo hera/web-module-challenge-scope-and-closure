@@ -28,9 +28,23 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * In the first case there's a closure. In the second, function changes the value of 'count' in the global scope.
+ * 
+ * counterMaker function creates an environment and stores 'count' variable in it. Then it creates a new function 'counter' and returns it.
+ * The value is stored in counter1 variable. When the value of counter1 is invoked, the function will have access to the previously created
+ * environment, where 'count' variable exists, and increment the number.
+ * 
+ * counter2 function will just change the value of 'count' in the global scope and counter2's environment will be garbage collected.
+ * 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * In counterMaker. count variable is not reachable from the global scope. The only way to access it is to use counter function.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter1 is good when I need to hide the details and not clutter the global scope.
+ * counter2 will work when I need to change the value in the global scope
  *
 */
 
